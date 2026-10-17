@@ -19,6 +19,7 @@
       max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; color: #1c1c1e; background: #fff;
       overflow-wrap: break-word;
     }
+    a { color: #6f43c0; }
     @media (prefers-color-scheme: dark) { body { color: #e6e6ea; background: #111114; } a { color: #b794ff; } }
     h1 { font-size: 1.9rem; margin: 0 0 .25rem; letter-spacing: -0.02em; }
     h2 { font-size: 1.2rem; margin: 2rem 0 .5rem; }
@@ -26,7 +27,6 @@
     .updated { color: #8a8a8e; font-size: .9rem; margin-bottom: 1.5rem; }
     .lede { font-size: 1.05rem; }
     .lang { font-size: .95rem; margin: 0 0 1.5rem; }
-    a { color: #6f43c0; }
     ul { padding-left: 1.25rem; }
     li { margin: .25rem 0; }
     code { font-size: .9em; }
@@ -65,7 +65,7 @@
   <ul>
     <li><strong>Auf deinem iPhone und deiner Apple Watch.</strong></li>
     <li><strong>In deinem privaten iCloud-Konto</strong> (private CloudKit-Datenbank von Apple), damit deine Geräte synchron bleiben. Das betrifft Trainingsdaten, Profil, Körpermaße und deine Selbsteinschätzung. Für die Speicherung in iCloud gelten deine Vereinbarung mit Apple und <a href="https://www.apple.com/legal/privacy/">Apples Datenschutzrichtlinie</a>. Wir haben keinen Zugriff auf diese Datenbank. Wir können deine Daten weder lesen noch wiederherstellen.</li>
-    <li><strong>Nur auf dem jeweiligen Gerät</strong> bleiben: die Werte, die die App aus Apple Health oder Garmin übernimmt oder berechnet (zum Beispiel deine HRV-Vergleichswerte, Ruhepuls, Schlafdauer, Atemfrequenz und der HRV-Wert einer Tagesform-Abfrage), ein Teil der Einstellungen und die Zugangsdaten für Strava und Garmin. Die Zugangsdaten liegen im iOS-Schlüsselbund und werden nicht auf andere Geräte übertragen.</li>
+    <li><strong>Nur auf dem jeweiligen Gerät</strong> bleiben: die Werte, die die App aus Apple Health oder Garmin übernimmt oder berechnet (zum Beispiel deine HRV-Vergleichswerte, Ruhepuls, Schlafdauer, Atemfrequenz und der HRV-Wert einer Tagesform-Abfrage), ein Teil der Einstellungen und die Zugangsdaten für Strava und Garmin. Die Zugangsdaten liegen im iOS-Schlüsselbund und werden nicht auf andere Geräte übertragen. Was die App daraus für dein Training ableitet (zum Beispiel eine leichtere Einheit oder eine Entlastungswoche), wird mit der Einheit und deinem Profil in iCloud gespeichert.</li>
   </ul>
   <p>Frühere Versionen der App haben den HRV-Wert einer Tagesform-Abfrage zusammen mit der Einheit in iCloud gespeichert. Solche älteren Einträge bleiben dort, bis du die Einheit oder alle Daten löschst (Abschnitt 13).</p>
   <p>Wir betreiben keine eigenen Server für deine Daten.</p>
@@ -77,10 +77,10 @@
     <li><strong>Lesen auf der Apple Watch:</strong> deine Herzfrequenz während eines Trainings, um sie anzuzeigen.</li>
     <li><strong>Schreiben:</strong> abgeschlossene Trainings und die geschätzte Aktivenergie (kcal), damit sie in Health und Fitness erscheinen. Auf dem iPhone schätzt die App die Aktivenergie aus Trainingsdauer und Körpergewicht. Startest du eine Einheit neu oder löschst du sie, entfernt FORGE das Training, das die App dafür auf dem iPhone in Health geschrieben hat.</li>
   </ul>
-  <p>Daten aus Apple Health wertet die App auf deinem Gerät aus. FORGE speichert sie nicht in iCloud (Ausnahme: der Wert des Schlaf-Reglers, den du bestätigst, siehe Abschnitt 2). Sie gehen nicht an Strava oder Garmin, nicht an uns und werden nicht für Werbung oder Marketing genutzt.</p>
+  <p>Daten aus Apple Health wertet die App auf deinem Gerät aus. FORGE speichert sie nicht in iCloud (Ausnahmen: der Wert des Schlaf-Reglers, den du bestätigst, siehe Abschnitt 2, und was die App daraus für dein Training ableitet, siehe Abschnitt 3). Sie gehen nicht an Strava oder Garmin, nicht an uns und werden nicht für Werbung oder Marketing genutzt.</p>
 
   <h2>5. Strava (optional)</h2>
-  <p>Wenn du Strava verbindest, meldest du dich in einem Anmeldefenster direkt bei Strava an. FORGE sieht dein Strava-Passwort nicht. Die App erhält Zugangsschlüssel (Tokens), die nur das Hochladen von Aktivitäten erlauben, sowie deine Strava-Athleten-ID und deinen Namen bei Strava. Beides liegt im iOS-Schlüsselbund auf diesem Gerät.</p>
+  <p>Wenn du Strava verbindest, meldest du dich in einem Anmeldefenster direkt bei Strava an. FORGE sieht dein Strava-Passwort nicht. Die App erhält Zugangsschlüssel (Tokens) mit der Strava-Berechtigung zum Hochladen von Aktivitäten (<code>activity:write</code>), sowie deine Strava-Athleten-ID und deinen Namen bei Strava. Beides liegt im iOS-Schlüsselbund auf diesem Gerät.</p>
   <p>Hochgeladen wird eine FIT-Datei der Einheit mit Übungen, Sätzen, Wiederholungen, Gewichten, Zeiten und dem Namen der Einheit. Sie enthält keine Daten aus Apple Health. Wann das passiert, wählst du unter Einstellungen › Strava › „Trainings teilen“: „Jedes Mal fragen“ (Voreinstellung), „Automatisch“ (jede abgeschlossene Einheit wird ohne weitere Nachfrage hochgeladen) oder „Nie“.</p>
   <p>Für die Daten in deinem Strava-Konto gilt die <a href="https://www.strava.com/legal/privacy">Datenschutzerklärung von Strava</a>.</p>
 
@@ -117,9 +117,10 @@
     <li><strong>Funktionen der App, die du nutzt</strong> (Speichern und Synchronisieren deiner Eingaben, Verbindung mit Strava oder Garmin, Uploads, die du auslöst oder mit „Automatisch“ einstellst): Art. 6 Abs. 1 lit. b DSGVO.</li>
     <li><strong>Gesundheitsdaten</strong> (Daten aus Apple Health, Erholungsdaten aus Garmin, Beschwerden, Körpermaße, Selbsteinschätzung): Art. 9 Abs. 2 lit. a DSGVO, deine ausdrückliche Einwilligung. Du erteilst sie, indem du den Zugriff in Apple Health erlaubst, Garmin verbindest oder die Angaben selbst einträgst.</li>
     <li><strong>Abruf der Übungsfotos über jsDelivr:</strong> Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, Übungen mit Fotos zu zeigen, ohne alle Fotos in die App packen zu müssen. Ohne deine IP-Adresse kann kein Server ein Bild ausliefern.</li>
-    <li><strong>Absturzberichte und TestFlight-Feedback:</strong> Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, Fehler zu finden und zu beheben.</li>
+    <li><strong>Absturzberichte, Nutzungsstatistiken von Apple und TestFlight-Feedback:</strong> Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist, Fehler zu finden und zu beheben.</li>
     <li><strong>E-Mail-Anfragen:</strong> Art. 6 Abs. 1 lit. b DSGVO, soweit es um die Nutzung der App geht, sonst Art. 6 Abs. 1 lit. f DSGVO (dir antworten).</li>
   </ul>
+  <p>Du musst keine Daten angeben. Ohne Apple Health oder Garmin schätzt die App deine Tagesform nur aus deinen Reglern; ohne Strava- oder Garmin-Verbindung gibt es keinen Upload.</p>
 
   <h2>11. Empfänger</h2>
   <ul>
@@ -141,7 +142,7 @@
     <li><strong>Einstellungen › Gefahrenbereich › „App zurücksetzen“</strong> löscht alle Trainings, Pläne, Profil, Körpermaße und Selbsteinschätzungen, die lokalen Erholungswerte und Einstellungen und trennt Strava und Garmin. Die Löschung erreicht deine iCloud und deine anderen Geräte, sobald die App synchronisiert; lass dein Gerät dafür online. <strong>Nicht gelöscht</strong> werden Trainings, die FORGE in Apple Health geschrieben hat (diese löschst du in der Health-App), und Kopien, die schon zu Strava oder Garmin hochgeladen wurden (diese löschst du dort).</li>
     <li><strong>App löschen</strong> entfernt die Daten auf diesem Gerät. Einträge im iOS-Schlüsselbund können dabei erhalten bleiben; trenne Strava und Garmin deshalb vorher in der App.</li>
     <li><strong>iCloud:</strong> Unter <strong>Einstellungen › [dein Name] › iCloud › Accountspeicher verwalten › FORGE</strong> löschst du die Daten der App aus iCloud.</li>
-    <li><strong>Strava und Garmin trennen:</strong> Einstellungen › Strava › „Trennen“ bzw. Einstellungen › Garmin Connect › „Garmin trennen“. Damit löscht FORGE die gespeicherten Zugangsdaten auf diesem Gerät. Den Zugriff kannst du zusätzlich in deinem Strava- oder Garmin-Konto widerrufen.</li>
+    <li><strong>Strava und Garmin trennen:</strong> Einstellungen › Strava › „Trennen“ bzw. Einstellungen › Garmin Connect › „Garmin trennen“. Damit löscht FORGE die gespeicherten Zugangsdaten auf diesem Gerät. Bei Strava kannst du den Zugriff zusätzlich in deinem Strava-Konto (Einstellungen › Meine Apps) widerrufen. Bei Garmin erscheint FORGE nicht als eigene App, weil die Verbindung über die inoffizielle Schnittstelle läuft.</li>
     <li><strong>Apple Health:</strong> Den Zugriff entziehst du unter Einstellungen › Datenschutz &amp; Sicherheit › Health › FORGE.</li>
   </ul>
 
@@ -180,7 +181,7 @@
   <h2>2. What data the app processes</h2>
   <ul>
     <li><strong>Training data:</strong> plans, sessions, exercises, sets, reps, weights, times, estimated one-rep max (e1RM) and personal records.</li>
-    <li><strong>Profile:</strong> name (if you enter one), date of birth, sex, body weight, training goal, experience, training days, available equipment, details about your current strength, and any complaints or limitations you select (for example knee, shoulder or lower back).</li>
+    <li><strong>Profile:</strong> name (if you enter one), date of birth, sex, body weight, training goal, experience, training days, available equipment, details about your current strength, and any joint problems or limitations you select (for example knee, shoulder or lower back).</li>
     <li><strong>Body measurements:</strong> body weight, body-fat percentage and circumferences (for example chest, waist, hips, arm, thigh, calf), if you log them.</li>
     <li><strong>Readiness (your self-report):</strong> before a session you can rate sleep, soreness and mood on sliders from 0 to 10. The app may pre-fill the sleep slider from your last night’s sleep in Apple Health or Garmin; you can change it. The value you start the session with is saved.</li>
     <li><strong>Health data from Apple Health</strong>, only with your permission (section 4).</li>
@@ -192,7 +193,7 @@
   <ul>
     <li><strong>On your iPhone and your Apple Watch.</strong></li>
     <li><strong>In your private iCloud account</strong> (Apple’s CloudKit private database), so your devices stay in sync. This covers training data, profile, body measurements and your self-report. Storage in iCloud is governed by your agreement with Apple and <a href="https://www.apple.com/legal/privacy/">Apple’s Privacy Policy</a>. We have no access to this database. We cannot read or recover your data.</li>
-    <li><strong>Only on the device itself:</strong> the values the app takes from Apple Health or Garmin or calculates from them (for example your HRV baseline, resting heart rate, sleep duration, respiratory rate and the HRV value of a readiness check-in), some settings, and your Strava and Garmin sign-in data. The sign-in data is kept in the iOS Keychain and is not transferred to other devices.</li>
+    <li><strong>Only on the device itself:</strong> the values the app takes from Apple Health or Garmin or calculates from them (for example your HRV baseline, resting heart rate, sleep duration, respiratory rate and the HRV value of a readiness check-in), some settings, and your Strava and Garmin sign-in data. The sign-in data is kept in the iOS Keychain and is not transferred to other devices. What the app derives from them for your training (for example a lighter session or a deload week) is saved with the session and your profile in iCloud.</li>
   </ul>
   <p>Earlier versions of the app saved the HRV value of a readiness check-in with the session in iCloud. Such older entries stay there until you delete the session or all data (section 13).</p>
   <p>We do not run any servers of our own for your data.</p>
@@ -204,10 +205,10 @@
     <li><strong>Read on Apple Watch:</strong> your heart rate during a workout, to display it.</li>
     <li><strong>Write:</strong> finished workouts and their estimated active energy (kcal), so they appear in Health and Fitness. On iPhone the app estimates active energy from workout duration and body weight. If you restart or delete a session, FORGE removes the workout the app wrote to Health for it on the iPhone.</li>
   </ul>
-  <p>The app evaluates Apple Health data on your device. FORGE does not store it in iCloud (exception: the sleep-slider value you confirm, see section 2). It does not go to Strava or Garmin, not to us, and is not used for advertising or marketing.</p>
+  <p>The app evaluates Apple Health data on your device. FORGE does not store it in iCloud (exceptions: the sleep-slider value you confirm, see section 2, and what the app derives from it for your training, see section 3). It does not go to Strava or Garmin, not to us, and is not used for advertising or marketing.</p>
 
   <h2>5. Strava (optional)</h2>
-  <p>If you connect Strava, you sign in directly with Strava in a sign-in window. FORGE never sees your Strava password. The app receives access tokens that only allow uploading activities, plus your Strava athlete ID and your Strava name. Both are kept in the iOS Keychain on this device.</p>
+  <p>If you connect Strava, you sign in directly with Strava in a sign-in window. FORGE never sees your Strava password. The app receives access tokens with Strava’s activity-upload permission (<code>activity:write</code>), plus your Strava athlete ID and your Strava name. Both are kept in the iOS Keychain on this device.</p>
   <p>The upload is a FIT file of the session with exercises, sets, reps, weights, times and the session’s name. It contains no Apple Health data. You choose when this happens in Settings › Strava › “Share workouts”: “Ask each time” (default), “Auto” (every completed session is uploaded without asking again) or “Never”.</p>
   <p>Data in your Strava account is governed by <a href="https://www.strava.com/legal/privacy">Strava’s Privacy Policy</a>.</p>
 
@@ -242,11 +243,12 @@
   <h2>10. Purposes and legal bases</h2>
   <ul>
     <li><strong>App features you use</strong> (saving and syncing your entries, connecting Strava or Garmin, uploads you start or set to “Auto”): Art. 6(1)(b) GDPR.</li>
-    <li><strong>Health data</strong> (Apple Health data, Garmin recovery data, complaints, body measurements, self-report): Art. 9(2)(a) GDPR, your explicit consent. You give it by allowing access in Apple Health, connecting Garmin or entering the data yourself.</li>
+    <li><strong>Health data</strong> (Apple Health data, Garmin recovery data, joint problems or limitations, body measurements, self-report): Art. 9(2)(a) GDPR, your explicit consent. You give it by allowing access in Apple Health, connecting Garmin or entering the data yourself.</li>
     <li><strong>Loading exercise photos through jsDelivr:</strong> Art. 6(1)(f) GDPR. Our legitimate interest is to show exercises with photos without bundling every photo in the app. No server can deliver an image without your IP address.</li>
-    <li><strong>Crash reports and TestFlight feedback:</strong> Art. 6(1)(f) GDPR. Our legitimate interest is finding and fixing bugs.</li>
+    <li><strong>Crash reports, Apple’s usage statistics and TestFlight feedback:</strong> Art. 6(1)(f) GDPR. Our legitimate interest is finding and fixing bugs.</li>
     <li><strong>Email enquiries:</strong> Art. 6(1)(b) GDPR where they concern your use of the app, otherwise Art. 6(1)(f) GDPR (replying to you).</li>
   </ul>
+  <p>You are not required to provide any data. Without Apple Health or Garmin the app estimates your readiness from your sliders only; without a Strava or Garmin connection there are no uploads.</p>
 
   <h2>11. Recipients</h2>
   <ul>
@@ -268,7 +270,7 @@
     <li><strong>Settings › Danger Zone › “Factory Reset”</strong> deletes all workouts, plans, profile, body measurements and self-reports, the local recovery values and settings, and disconnects Strava and Garmin. The deletion reaches your iCloud and your other devices once the app syncs; keep your device online for this. <strong>Not deleted</strong> are workouts FORGE wrote to Apple Health (delete them in the Health app) and copies already uploaded to Strava or Garmin (delete them there).</li>
     <li><strong>Deleting the app</strong> removes the data on this device. Items in the iOS Keychain may remain, so disconnect Strava and Garmin in the app first.</li>
     <li><strong>iCloud:</strong> in <strong>Settings › [your name] › iCloud › Manage Account Storage › FORGE</strong> you can delete the app’s data from iCloud.</li>
-    <li><strong>Disconnect Strava and Garmin:</strong> Settings › Strava › “Disconnect”, or Settings › Garmin Connect › “Disconnect Garmin”. FORGE then deletes the stored sign-in data on this device. You can also revoke access in your Strava or Garmin account.</li>
+    <li><strong>Disconnect Strava and Garmin:</strong> Settings › Strava › “Disconnect”, or Settings › Garmin Connect › “Disconnect Garmin”. FORGE then deletes the stored sign-in data on this device. For Strava you can also revoke access in your Strava account (Settings › My Apps). In your Garmin account FORGE does not appear as an app of its own, because the connection uses the unofficial interface.</li>
     <li><strong>Apple Health:</strong> revoke access in Settings › Privacy &amp; Security › Health › FORGE.</li>
   </ul>
 
